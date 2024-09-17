@@ -97,7 +97,7 @@ public class Tasknum1{
         for (int i = 0; i < am_tickets.length; i++){
             int amotick = am_tickets[i];
             int tprice = price_tick[i];
-            double withoutfee = 0.72;
+            double withoutfee = 0.7200;
             int income = earnings(amotick, tprice, withoutfee);
             System.out.println("amount of tickets: " + amotick +
              "; price for one: " + tprice + "; without additional fee: " + withoutfee 
@@ -127,9 +127,9 @@ public class Tasknum1{
         if ((x <= 0 || y <= 0 || z <= 0) || !((x + y > z) && (x + z > y) && (z + y > x))) {
             return "not a triangle";
         } else if (x == y && y == z) {
-            return "isosceles";
-        } else if (x == y || x == z || y == z) {
             return "equilateral";
+        } else if (x == y || x == z || y == z) {
+            return "isosceles";
         } else if (x != y && x != z && y != z) {
             return "different-sided";
         } else {
@@ -143,7 +143,7 @@ public class Tasknum1{
 
     public static int amOfI(double clothLength, double width, double length) {
         int items = 0;
-        double clothArea = clothLength/2;
+        double clothArea = clothLength*2;
         double itemArea = width * length;
         while (clothArea >= itemArea) {
             clothArea -= itemArea;
