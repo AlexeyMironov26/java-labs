@@ -9,7 +9,7 @@ public class Tasknum1{
             System.out.println("Gallons: " + gallons + "| Liters: " + liters);
         }
 
-        int[] ini_minutes = {15, 24, 41}; // [] здесь нужны, чтобы обявить не одну переменную типа int, а массив переменных
+        int[] ini_minutes = {15, 24, 41}; // [] здесь нужны, чтобы объявить не одну переменную типа int, а массив переменных
         int[] ini_temp = {1, 2, 3};
         System.out.println("PartNum 2");
         for (int i=0; i<ini_minutes.length; i++) {
