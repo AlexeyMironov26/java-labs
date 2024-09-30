@@ -78,9 +78,9 @@ public class Tasknum2{
     public static String iniOutput(String fio){
         String result = "";
         String[] list = fio.split(" ");
-        result+=list[0].substring(0,1).toUpperCase()+". ";
         result+=list[1].substring(0,1).toUpperCase()+". ";
-        result+=list[2].substring(0,1).toUpperCase()+list[2].substring(1);
+        result+=list[2].substring(0,1).toUpperCase()+". ";
+        result+=list[0].substring(0,1).toUpperCase()+list[0].substring(1);
         
         return result;
     }
@@ -159,13 +159,13 @@ public class Tasknum2{
         String[] arra = new String[0];
         String[] arrb = new String[0];
         for (int i=0;i<linea.length();i++){
-            if (" .,!?".indexOf(lineb.charAt(i))== -1){
+            if ("abcdefghijklmnopqrstuvwxyz".indexOf(lineb.charAt(i))!= -1){
                 arra = Arrays.copyOf(arra, arra.length+1);
                 arra[arra.length-1] = String.valueOf(linea.charAt(i));
             }
         }
         for (int i=0;i<lineb.length();i++){
-            if (" .,!?".indexOf(lineb.charAt(i))== -1){
+            if ("abcdefghijklmnopqrstuvwxyz".indexOf(lineb.charAt(i))!= -1){
                 arrb = Arrays.copyOf(arrb, arrb.length+1);
                 arrb[arrb.length-1] = String.valueOf(lineb.charAt(i));
             }
