@@ -1,5 +1,4 @@
 package geometric_figures;
-
 public class Sphere extends GeometryFigure {
 
     public static double counter = 0;
@@ -27,5 +26,4 @@ public class Sphere extends GeometryFigure {
         System.out.println("The type of figure: " + this.getType() + "; Coordinates of center spot: " + getcX()+" , "+getcY()+" , "+getcZ() + "; The color of figure: " + this.getCol() + "; The volume of figure: " + volume);
         System.out.println("The amount of created objects: " + Sphere.counter);
     }
-
 }

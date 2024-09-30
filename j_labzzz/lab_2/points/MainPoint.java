@@ -1,6 +1,6 @@
 package points;
-import points.Point2d;
-import points.Point3d;
+// import points.Point2d;
+// import points.Point3d;
 public class MainPoint {
     public static void main(String[] args) {
         Point3d myanpoint = new Point3d(3.0, 3.0, 3.0);
