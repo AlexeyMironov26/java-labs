@@ -1,7 +1,5 @@
 package geometric_figures;
-
 import java.util.Scanner;
-
 public class MainFigures {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -13,9 +11,9 @@ public class MainFigures {
             Parallelepiped paral = new Parallelepiped();
             paral.assignColor("Yellow");
             paral.setCenter(2, 5, 3);
-            paral.width = 4;
+            paral.set_wd(4);;
             paral.height = 3;
-            paral.length = 6;
+            paral.set_len(6);
             paral.displayFigInfo();
         }
         else if (figure.equals("Cyllinder")){
