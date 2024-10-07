@@ -7,8 +7,8 @@ public abstract class GeometryFigure {
     private double zCoord;
     protected String color;
     protected double volume;
-    public double radius;
-    public double height;
+    protected double radius;
+    protected double height;
 
     public GeometryFigure(String ft, double x, double y, double z, String col){
         figureType = ft;
