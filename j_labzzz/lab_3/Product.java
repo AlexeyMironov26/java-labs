@@ -18,7 +18,7 @@ public class Product {
 
     public String convToStr(){
         String output = "";
-        output+=name+" "+description+" "+String.valueOf(price)+" "+String.valueOf(stock);
+        output+=name+"; "+description+"; "+String.valueOf(price)+"; "+String.valueOf(stock);
         return output;
     }
 
