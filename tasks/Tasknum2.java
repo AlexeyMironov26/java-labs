@@ -159,7 +159,7 @@ public class Tasknum2{
         String[] arra = new String[0];
         String[] arrb = new String[0];
         for (int i=0;i<linea.length();i++){
-            if ("abcdefghijklmnopqrstuvwxyz".indexOf(lineb.charAt(i))!= -1){
+            if ("abcdefghijklmnopqrstuvwxyz".indexOf(linea.charAt(i))!= -1){
                 arra = Arrays.copyOf(arra, arra.length+1);
                 arra[arra.length-1] = String.valueOf(linea.charAt(i));
             }

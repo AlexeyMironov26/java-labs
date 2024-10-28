@@ -1,0 +1,2 @@
+CustomEmptyStackException: You try to fetch the element from an empty stack
+CustomEmptyStackException: You try to fetch the element from an empty stack
