@@ -1,6 +1,5 @@
 import java.io.FileWriter;
 import java.io.IOException;
-//import CustomEmptyStackException;
 
 public class MainStackEx {
     public static void main(String[] args) {
