@@ -82,22 +82,27 @@ public class Tasknum3 {
         }
     
         public static HashMap<String,Integer> goodsList(HashMap<String,Integer> Prodlist, double discount){
-            HashMap<String,Integer> res = new HashMap<String,Integer>(Prodlist);
+            //HashMap<String,Integer> Prodlist = new HashMap<String,Integer>(Prodlist);
             double offTheDisc = 1 - discount/100.0;
-            for (String s: res.keySet()){
-                if (res.get(s)*offTheDisc<1){
-                    res.put(s, 1);
+            for (String s: Prodlist.keySet()){
+                if (Prodlist.get(s)*offTheDisc<1){
+                    Prodlist.put(s, 1);
                 }
-                res.put(s, (int) Math.round(res.get(s)*offTheDisc));
+                Prodlist.put(s, (int) Math.round(Prodlist.get(s)*offTheDisc));
             }
             
-            return res;
+            return Prodlist;
         }
+
         public static boolean sumSameEven(int num){
+            int num1=num;
             int sum = 0;
-            for (int i=0; i<Integer.toString(num).length(); i++){
-                sum+=Character.getNumericValue(String.valueOf(num).charAt(i));
+            for (int i=0; i<String.valueOf(num).length(); i++){
+                sum+=num1%10;
+                num1/=10;
+                //sum+=Character.getNumericValue(String.valueOf(num).charAt(i));
             }
+            System.out.println(sum);
 
             if ((num%2==0 && sum%2==0) || (num%2!=0 && sum%2!=0)){
                 return true;
@@ -107,16 +112,16 @@ public class Tasknum3 {
         }
 
             public static String rps(String pl1, String pl2){
-                String res = "";
+                String Prodlist = "";
                 if (pl1 == pl2){
-                    res = "Tie";
+                    Prodlist = "Tie";
                 }
                 else if ((pl1 == "rock" && pl2 =="scissors") || (pl1 == "paper" && pl2 =="rock") || (pl1 == "scissors" && pl2 =="paper")){
-                    res = "Player 1 wins";
+                    Prodlist = "Player 1 wins";
                 } else {
-                    res = "Player 2 wins";
+                    Prodlist = "Player 2 wins";
                 }
-                return res;
+                return Prodlist;
         } 
         
         public static int multiConst(int num){
@@ -132,6 +137,7 @@ public class Tasknum3 {
             }
             return counter;
         }
+
     public static String higherPrice(List<Object[]> goodList){
         int highest = 0;
         String Hobj = "";

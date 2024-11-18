@@ -39,7 +39,6 @@ public class CopyPaste {
             writeman.write(tempData);
             writeman.close();
             //writeman.write(tempData); //cause IOException
-
         }
             catch(FileNotFoundException e){
                 System.out.println("No such file with given path or name");
@@ -51,6 +50,5 @@ public class CopyPaste {
                 System.out.println("We've got the problem(");
                 e.printStackTrace();
             } 
-    }
-    
+    }    
 }
