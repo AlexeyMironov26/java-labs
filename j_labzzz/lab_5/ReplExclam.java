@@ -8,7 +8,6 @@ public class ReplExclam {
         String text = "nUmberA mNi aM";
         Pattern ptrn = Pattern.compile(regex);
         Matcher mtcr = ptrn.matcher(text);
-        //String curelem = "";
         while (mtcr.find()) {
             elemlist.add(mtcr.group());
            text = text.replaceFirst(regex, "*"); 

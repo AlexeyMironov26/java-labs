@@ -2,7 +2,7 @@ import java.util.regex.*;
 public class Password {
 public static void main(String[] args) {
     try{
-    String text = "HIkidsss1205";
+    String text = "HIkidAAAAAAAAAAAAAAAsss1205";
     Pattern pat = Pattern.compile("(?=.*[A-Z])(?=.*\\d)[A-Za-z0-9]{8,16}");
     Matcher mat = pat.matcher(text);
 

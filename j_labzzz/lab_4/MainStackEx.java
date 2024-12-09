@@ -21,7 +21,7 @@ public class MainStackEx {
             System.out.println(OurStack.GetEl(7));; //cause CustomEmptyStackException
 
         } catch(CustomEmptyStackException e){
-            System.out.println("This stack do not consist anything, even a mystery :O");
+            System.out.println("This stack does not consist of anything, even a mystery :O");
             e.printStackTrace();
             try{
                 FileWriter writeman = new FileWriter(Logging_path, true);
@@ -29,7 +29,7 @@ public class MainStackEx {
             writeman.close();
             //writeman.write(e.toString()); //cause IOException
             } catch(IOException i){
-                System.out.println("Apparently here are more mysteries, than you capable to comprehend");
+                System.out.println("Apparently here are more mysteries, than you r capable to comprehend");
                 i.printStackTrace();
             }
         }
