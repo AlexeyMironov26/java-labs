@@ -16,12 +16,6 @@ public class ThreadMatrix {
             Thread thread1 = new ThreadMax(mat1[i]);
             threadlinks.add(thread1);
             thread1.start();
-            try{
-                thread1.join();
-    
-            } catch(InterruptedException h){
-                h.printStackTrace();
-            }
         }
         for (Thread thr_link:threadlinks){
             try{
@@ -34,9 +28,7 @@ public class ThreadMatrix {
            
             System.out.println("Maximal number of matrix: " + Collections.max(listmax));
         }
-    
 
-    
         static class ThreadMax extends Thread{
             private int[] arr;
     

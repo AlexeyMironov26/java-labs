@@ -12,19 +12,12 @@ public class Halfsum{
         } catch(InterruptedException i){
             i.printStackTrace();
         }
-        System.out.println("Sum of 2 threads is: " + Sum.sum);
-    }
-
-    class Sum{
-        static int sum;
-
-        public static synchronized void stepsum(int k){
-            sum+=k;
-        }
+        System.out.println("Sum of 2 threads is: " + (FirstThread.sum+SecondThread.sum));
     }
 
     static class FirstThread extends Thread{
         private int[] halfarr;
+        private static int sum;
 
         public FirstThread(int[] myarr){
             halfarr = myarr;
@@ -33,13 +26,14 @@ public class Halfsum{
         @Override
         public void run(){
             for (int i=0;i<halfarr.length/2;i++){
-                Sum.stepsum(halfarr[i]);
+                sum+=halfarr[i];
             }
         }
     }
 
     static class SecondThread extends Thread{
         private int[] halfarr;
+        private static int sum;
 
         public SecondThread(int[] myarr){
             halfarr = myarr;
@@ -48,7 +42,7 @@ public class Halfsum{
         @Override
         public void run(){
             for (int i=halfarr.length-1;i>=halfarr.length/2;i--){
-                Sum.stepsum(halfarr[i]);
+                sum+=halfarr[i];
             }
         }
     }

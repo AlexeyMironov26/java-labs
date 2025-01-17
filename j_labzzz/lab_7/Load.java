@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Load{
-
-    //static Merchandise typeofT = new Load().new Merchandise(11);
-    static StorageA p_StorageA = new Load().new StorageA(5);
+    static StorageA p_StorageA = new Load().new StorageA(7);
     static StorageB p_StorageB = new Load().new StorageB();
     public static void main(String[] args) {
        Thread loader1 = new Load().new Loader();
@@ -27,7 +25,7 @@ public class Load{
     
     class Merchandise{
         private int weight;
-        
+
         public Merchandise(int wei){
             weight=wei;
         }
@@ -45,7 +43,7 @@ public class Load{
             return total;
         }
 
-        public int particWei(){
+        public synchronized int particWei(){
             if(!merchStack.isEmpty()){
                 return merchStack.get(0).getWei();
             }
@@ -55,7 +53,6 @@ public class Load{
         }
 
         public StorageA(int amount){
-            // Merchandise new1 = new Merchandise(11);
             for(int i=0; i<amount;i++){
                 Merchandise tmerch = new Merchandise(11);
                 merchStack.add(tmerch);
@@ -63,7 +60,7 @@ public class Load{
             }
         }
 
-        public Merchandise takethelast(){
+        public synchronized Merchandise takethelast(){
             Merchandise merch = merchStack.get(merchStack.size()-1);
             total-=merch.getWei();
             merchStack.remove(merchStack.size()-1);
@@ -74,11 +71,11 @@ public class Load{
     class Loader extends Thread {
         private List<Merchandise> merchload = new ArrayList<>();
         private int Ltotal = 0;
-        final private int limit = 50;
+        final private int limit1 = 50;
 
         @Override
         public void run(){
-            while (p_StorageA.merchStack.size()!=0 && Ltotal<=limit){
+            while (p_StorageA.merchStack.size()!=0 && Ltotal+p_StorageA.particWei()<=limit1){
                 Merchandise tempM = p_StorageA.takethelast();
                 merchload.add(tempM);
                 Ltotal+=tempM.getWei();
@@ -90,10 +87,10 @@ public class Load{
             }
 
             while(!merchload.isEmpty()){
-                int lastel = merchload.size()-1;
-                p_StorageB.putin(merchload.get(lastel));
-                Ltotal-=merchload.get(lastel).getWei();
-                merchload.remove(lastel);
+                Merchandise lastel = merchload.get(merchload.size()-1);
+                p_StorageB.putin(lastel);
+                Ltotal-=lastel.getWei();
+                merchload.remove(merchload.size()-1);
             }
         }
     }
@@ -106,13 +103,13 @@ public class Load{
             return total;
         }
 
-        public void putin(Merchandise merchy){
+        public synchronized void putin(Merchandise merchy){
             merchStackB.add(merchy);
             total+=merchy.getWei();
         }
 
         public List<Merchandise> getList(){
-            return new ArrayList<>(merchStackB);
+            return merchStackB;
         }
     }
 }
